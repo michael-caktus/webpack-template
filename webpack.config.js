@@ -17,7 +17,7 @@ module.exports = (_, argv) => {
     return Object.assign(config, {
         mode,
         entry: {
-            [package.name]: path.resolve(__dirname, "./src/index.js")
+            [package.name]: path.resolve(__dirname, "./src/js/index.js")
         },
         output: {
             filename: "./[name].bundle.js",
@@ -46,7 +46,7 @@ module.exports = (_, argv) => {
                     }
                 },
                 {
-                    test: /\.scss$/,
+                    test: /\.s[ac]ss$/i,
                     use: ["style-loader", "css-loader", "sass-loader"]
                 }
             ]
