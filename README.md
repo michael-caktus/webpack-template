@@ -18,3 +18,7 @@ This particular build does the following:
 - Developers can run `npm run dev` to open up a browser with 🔥hot-reloading🔥 enabled. All changes made to .js, .html, and .css/.scss files will automatically refresh the browser! 🚀
 - Starting the project with `npm run dev` will serve assets found in `dist/` on localhost:8080
 - Developers work out of the `src/` directory and never need to touch the `dist/` dir
+- Running `npm run build` will bundle all necessary files in the dist/ directory, and stick your CSS in a `<style>` tag in the head. 
+
+## 🔮 FUTURE work
+- This is a good start. But there isn't a lot of call for non-SPA static sites nowadays. Can we combine this with existing django templates? Maybe write a custom babel loader?

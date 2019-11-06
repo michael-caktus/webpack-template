@@ -9,13 +9,19 @@ module.exports = (_, argv) => {
     if (mode === 'development') {
         config.devtool = 'inline-source-map'
         config.devServer = {
-            contentBase: path.resolve(__dirname, "./dist")
+            contentBase: path.resolve(__dirname, "./dist"),
+            headers: {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
+                "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
+            }
         },
-        config.watch = true
+            config.watch = true
     }
 
     return Object.assign(config, {
         mode,
+        target: 'web',
         entry: {
             [package.name]: path.resolve(__dirname, "./src/js/index.js")
         },
